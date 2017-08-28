@@ -26,4 +26,4 @@ RUN apt-get update && apt-get install -my \
 RUN php5enmod mcrypt
 
 EXPOSE 9000
-CMD ["php5-fpm"]
+CMD ["php5-fpm", "-F"]
