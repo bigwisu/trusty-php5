@@ -25,5 +25,8 @@ RUN apt-get update && apt-get install -my \
   
 RUN php5enmod mcrypt
 
+# let php5-fpm listen to port 9000
+RUN sed -i 's/\/var\/run\/php5-fpm.sock/9000"/g' /etc/php5/fpm/pool.d/www.conf
+
 EXPOSE 9000
 CMD ["php5-fpm", "-F"]
